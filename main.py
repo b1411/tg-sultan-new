@@ -37,3 +37,11 @@ async def echo(message: Message):
         "contactId": f'{message.from_user.id}NEW_SULTAN'
     }, headers={'Content-Type': 'application/json'})
     await message.answer(res.json()['message'])
+
+
+async def main():
+    await dp.start_polling()
+
+if __name__ == '__main__':
+    logging.basicConfig(level=logging.INFO)
+    asyncio.run(main())
